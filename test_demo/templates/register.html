@@ -1,0 +1,68 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <meta name="description" content="Login - Register Template">
+    <meta name="author" content="Lorenzo Angelino aka MrLolok">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/static/main.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="/static/iconfont.css" rel="stylesheet" type="text/css">
+    <style>
+        body {
+            background-color: #303641;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container-register">
+        <div id="title">
+            <i class="iconfont" ></i>资料填写处
+        </div>
+        <form class="layui-form" action="" method="post">
+            {% csrf_token %}
+            <div class="input">
+                <div class="input-addon">
+                    <i class="material-icons">face</i>
+                </div>
+                <input id="username" placeholder="请输入名字" type="text" required name="username" class="validate" autocomplete="off">
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="input">
+                <div class="input-addon">
+                    <i class="iconfont icon-shouji"></i>
+                </div>
+                <input id="phone" placeholder="请输入联系方式" type="text" required name="phone" class="validate" autocomplete="off">
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="input">
+                <div class="input-addon">
+                    <i class="iconfont icon-nianling"></i>
+                </div>
+                <input id="age" placeholder="请输入年龄" type="text"  required name="age" class="validate" autocomplete="off">
+            </div>
+
+            <div class="remember-me">
+{#                <input type="checkbox">#}
+{#                <span style="color: #DDD">I accept Terms of Service</span>#}
+            </div>
+{#            <input type="submit" value="提交信息" />#}
+            <button>提交信息</button>
+        </form>
+        <div class="privacy">
+            <a href="#">感谢您的支持, 祝您生活越快!</a>
+        </div>
+        <div class="register">
+{#            Do you already have an account?#}
+{#            <a href="#"><button id="register-link">Log In here</button></a>#}
+            <p>{{ state }}</p>
+        </div>
+    </div>
+</body>
+
+</html>
